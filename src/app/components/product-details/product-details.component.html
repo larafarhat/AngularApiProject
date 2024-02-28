@@ -1,0 +1,38 @@
+
+    <div class="product_details">
+
+        <div class="infoAndPrimImg">
+       
+            <div class="info">
+                <div class="idAndName"> {{details.id}}.
+                    {{details.name}}
+                </div>
+                <br>
+                <div class="description"> {{details.description}}</div>
+                <div class="category"> {{details.category}}</div>
+                <div class="price">Price: ${{details.price}}</div>
+                <div class="sizesOption">
+                    <select>
+                        @for (size of details.sizes; track $index) {
+                        <option> {{ size.size }} Qty: {{size.quantity}} </option>
+                        }
+                    </select>
+                </div>
+               
+            </div>
+            <div class="primary_img"><img src="{{ 'https://api.secxtion.com/storage/'+details.primary_image }}"
+                    alt="Product Image">
+            </div>
+
+
+        </div>
+ <div class="pictures">
+                    <div class="picture">
+                        @for (image of details.images; track $index) {
+                        <img src="{{ 'https://api.secxtion.com/storage/'+image.path }}" alt="Product Image">
+                        }
+                    </div>
+                </div>
+
+                <a href="#" onclick="index.html">&lt; Back</a>
+    </div>

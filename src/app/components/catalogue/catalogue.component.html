@@ -1,0 +1,25 @@
+<div class="head">
+  <h1>Products Catalogue</h1>
+</div>
+<div class="products">
+  <div class="product_item_container">
+    @for (product of products; track $index) {
+    <a href="catalogue/{{product.id}}" class="product_item">
+      <div class="infoAndPrimImg">
+        <div class="info">
+          <div class="idAndName"> {{product.id}}.
+            <a href="catalogue/{{product.id}}">{{product.name}}</a>
+          </div>
+          <div class="description"> {{product.description}}</div>
+          
+          <div class="price">${{product.price}}</div>
+
+        </div>
+        <div class="primary_img"><img src="{{ 'https://api.secxtion.com/storage/'+product.primary_image }}"
+            alt="Product Image">
+        </div>
+      </div>
+    </a>
+    }
+  </div>
+</div>
